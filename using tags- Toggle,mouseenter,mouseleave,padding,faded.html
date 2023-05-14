@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+$("#c1").click(function(){
+$(".cnt1").slideUp().slideDown();
+});
+$("#c2").click(function(){
+$(".cnt1").animate({
+width:'toggle'
+});
+});
+$("#c3").click(function(){
+$(".cnt2").fadeIn(3000);
+});
+$("#c4").click(function(){
+$(".cnt1").hide(3000);
+})
+$("#c5").click(function(){
+$(".cnt1").show(3000);
+})
+$(".cnt1").mouseenter(function(){
+alert("mouse entered into container1");
+});
+$(".cnt3").mouseleave(function(){
+alert("mouse leave from the container1");
+});
+$(".cnt3").dblclick(function(){
+$(".cnt3").hide();
+});
+$("#c6").click(function(){
+$(".cnt1").html("<b>hello</b>");
+});
+$("#c7").click(function(){
+alert($(".atr").attr("href"));
+});
+});
+</script>
+<style>
+.cnt1{
+border:2px solid black;
+background-color:purple;
+height:300px;
+width:300px;
+}
+.cnt3{
+border:2px solid black;
+background-color:hotpink;
+height:300px;
+width:300px;
+margin-top:1%;
+}
+#c3{
+margin-top:1%;
+}
+</style>
+</head>
+<body>
+<div class="cnt1">Hello</div>
+<button id="c1">click me!</button>
+<button id="c2">click me2!</button>
+<div class="cnt2" style="width:40px;height:60px;display:none;background-color:yellow;">
+<h2>fade in text</h2>
+</div>
+<button id="c3">fadein effect</button>
+<button id="c4">hide</button>
+<button id="c5">show</button>
+<button id="c6">change html</button>
+<h3>Double click me to hide</h3>
+<div class="cnt3"></div>
+<a class="atr" href="https://www.google.com">Google</a>
+<button id="c7">show attr</button>
+</body>
+</html>
